@@ -15,7 +15,7 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <li>
-              <a href="#" class="nav-link text-secondary">
+              <a href="{{ route('user-index') }}" class="nav-link text-secondary">
                 Usuários
               </a>
             </li>
@@ -39,18 +39,21 @@
       </div>
     </div>
   </header>
-  <main class="container p-5">
+  <main class="container mt-4 main-container">
     @yield('content')
   </main>
 
-
-{{-- <script src="{{ asset('js/jquery.js') }}"></script> --}}
+<script src="{{ asset('js/jquery.js') }}"></script>
 <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables-bootstrap4.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.js') }}"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#example').DataTable();
+    $('#datatable').DataTable();
+    setTimeout(function(){
+       $("div.alert").remove();
+    }, 5000 );
 } );
 </script>
 <footer class="text-center bg-secondary footer">

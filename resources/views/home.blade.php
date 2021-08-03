@@ -2,7 +2,7 @@
 @section('content')
 <div class="text-center p-5">
 @if (Auth::check())
-    <strong> Escolhe um menu acima para acessar</strong>
+    <strong> Escolha um menu acima para acessar</strong>
 @else
     <span>Sistema de agendamento médico Mazzatech</span>
     <br>
