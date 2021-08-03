@@ -7,7 +7,6 @@
     <title>Sys Medico</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/datatables.css') }}">
-    {{-- <link href="{{ asset('css/dataTables.bootstrap4.min.css') }}" rel="stylesheet"> --}}
 </head>
 <body>
     <header>
@@ -40,7 +39,6 @@
       </div>
     </div>
   </header>
-  {{-- <div class="container"> --}}
   <main class="container p-5">
     @yield('content')
   </main>
