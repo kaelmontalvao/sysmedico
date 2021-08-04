@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use App\User;
+use App\Doctor;
 
-class UserController extends Controller
+class DoctorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        // dd($users);
-        return view('users.index', compact('users'));
+        $doctors = Doctor::all();
+        return view('doctors.index', compact('doctors'));
     }
 
     /**
@@ -27,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('doctors.create');
     }
 
     /**
@@ -40,23 +39,20 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
         DB::beginTransaction();
         try {
 
             $data = $request->all();
-            $data['password'] = bcrypt($data['password']);
-            User::create($data);
+            Doctor::create($data);
             DB::commit();
             session()->flash('flash_success', "Salvo com sucesso");
-            return redirect()->route('user-index');
+            return redirect()->route('doctor-index');
         } catch (\Exception $e) {
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
-            return redirect()->route('user-create')->withInput();
+            return redirect()->route('doctor-create')->withInput();
         }
     }
 
@@ -66,10 +62,28 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function delete($userId)
+    public function delete($id)
     {
-        $user = User::find($userId);
-        return view('users.delete', compact('user'));
+        $doctor= Doctor::find($id);
+
+        $doctor->sexo = ($doctor->sexo == 'f' ? 'Feminino' : 'Masculino');
+        // dd(doctor;
+        switch ($doctor->status_civil) {
+            case 's':
+                $doctor->status_civil = "Solteiro";
+                break;
+            case 'c':
+                $doctor->status_civil = "Casado";
+                break;
+            case 'd':
+                $doctor->status_civil = "Divorciado";
+                break;
+            default:
+                $doctor->status_civil = "Viuvo";
+                break;
+        }
+
+        return view('doctors.delete', compact('doctor'));
     }
 
     /**
@@ -78,16 +92,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($userId)
+    public function edit($id)
     {
-        $user = User::find($userId);
-        return view('users.edit', compact('user'));
+        $doctor= Doctor::find($id);
+        return view('doctors.edit', compact('doctor'));
     }
 
-    public function read($userId)
+    public function read($id)
     {
-        $user = User::find($userId);
-        return view('users.read', compact('user'));
+        $doctor= Doctor::find($id);
+        return view('doctors.read', compact('doctor'));
     }
 
     /**
@@ -97,25 +111,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $userId)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        // dd($request);
         DB::beginTransaction();
         try {
 
             $data = $request->all();
-            $data['password'] = bcrypt($data['password']);
-
-            User::find($userId)->update($data);
+            Doctor::find($id)->update($data);
             DB::commit();
 
             session()->flash('flash_success', "Salvo com sucesso");
-            return redirect()->route('user-index');
+            return redirect()->route('doctor-index');
         } catch (\Exception $e) {
             // dd($e);
             DB::rollback();
@@ -130,17 +140,16 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($userId)
+    public function destroy($id)
     {
         DB::beginTransaction();
         try {
-            $user = User::find($userId);
-            $user->delete();
+            Doctor::find($id)->delete();
             DB::commit();
-            session()->flash('flash_success', "Usuário deletado com sucesso");
-            return redirect()->route('user-index');
+            session()->flash('flash_success', "Paciente deletado com sucesso");
+            return redirect()->route('doctor-index');
         } catch (\Exception $e) {
-            dd($e);
+            // dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->back();
