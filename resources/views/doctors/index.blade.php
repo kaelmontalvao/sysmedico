@@ -9,10 +9,10 @@
                 </a>
             </div>
                 <div class="align-menu-text col-md-4 py-2">
-                    <h3>Pacientes</h3>
+                    <h3>Médicos</h3>
                 </div>
             <div class="align-btn-new col-md-4">
-                <a class="btn-plus-list" href="{{ route('patient-create') }}" title="Novo paciente">
+                <a class="btn-plus-list" href="{{ route('doctor-create') }}" title="Novo medico">
                     <i class="bi bi-plus-circle" style="font-size: 2rem; color: cornflowerblue;"></i>
                 </a>
             </div>
@@ -34,29 +34,31 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Email</th>
                     <th>Sexo</th>
+                    <th>Especialidade</th>
+                    <th>Email</th>
                     <th>Fone</th>
                     <th>Celular</th>
-                    <th class="text-right">Ações</th>
+                    <th class="text-right px-4">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($patients as $patient)
+                @foreach($doctors as $doctor)
                     <tr>
-                        <td>{{ $patient->name }}</td>
-                        <td>{{ $patient->email }}</td>
-                        <td>{{ $patient->sexo == 'f' ? 'Feminino': 'Masculino' }}</td>
-                        <td>{{ $patient->phone }}</td>
-                        <td>{{ $patient->cellphone }}</td>
+                        <td>{{ $doctor->name }}</td>
+                        <td>{{ $doctor->sexo == 'f' ? 'Feminino': 'Masculino' }}</td>
+                        <td>{{ $doctor->specialty }}</td>
+                        <td>{{ $doctor->email }}</td>
+                        <td>{{ $doctor->phone }}</td>
+                        <td>{{ $doctor->cellphone }}</td>
                         <td class="text-right">
-                            <a href="{{ route('patient-read', $patient->id) }}" class="mr-2">
+                            <a href="{{ route('doctor-read', $doctor->id) }}" class="mr-2">
                                 <i class="bi bi-card-list" data-toggle="tooltip" title="Visualizar cadastro"></i>
                             </a>
-                            <a href="{{ route('patient-edit', $patient->id) }}" class="mr-2">
+                            <a href="{{ route('doctor-edit', $doctor->id) }}" class="mr-2">
                                 <i class="bi bi-pencil-square" data-toggle="tooltip" title="Editar"></i>
                             </a>
-                            <a href="{{ route('patient-delete', $patient->id) }}">
+                            <a href="{{ route('doctor-delete', $doctor->id) }}">
                                 <i class="bi bi-trash" data-toggle="tooltip" title="Excluir"></i>
                             </a>
                         </td>
