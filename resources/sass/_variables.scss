@@ -25,3 +25,40 @@ $primary: #9561e2;
     bottom: 0;
     width: 100%;
 }
+
+@media (min-width: 768px) {
+  .align-btn-home {
+    text-align: left;
+  }
+  .align-menu-text {
+    text-align: center;
+  }
+  .align-btn-new{
+    text-align: end;
+  }
+  .main-container .card{
+    position: sticky;
+  }
+  .main-container{
+    margin-bottom: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .align-btn-home {
+    text-align: center;
+  }
+  .align-menu-text {
+    text-align: center;
+  }
+  .align-btn-new{
+    text-align: center;
+  }
+  .main-container{
+    margin-bottom: 30%;
+  }
+  .main-container .card{
+    position: sticky;
+  }
+
+}
