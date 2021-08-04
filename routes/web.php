@@ -55,4 +55,14 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/delete/{id}', 'DoctorController@delete')->name('doctor-delete');
         Route::post('/destroy/{id}', 'DoctorController@destroy')->name('doctor-destroy');
     });
+    Route::group(['prefix' => 'agendamento'], function(){
+        Route::get('/', 'ScheduleController@index')->name('schedule-index');
+        Route::get('/create', 'ScheduleController@create')->name('schedule-create');
+        Route::get('/edit/{id}', 'ScheduleController@edit')->name('schedule-edit');
+        Route::get('/read/{id}', 'ScheduleController@read')->name('schedule-read');
+        Route::post('/store', 'ScheduleController@store')->name('schedule-store');
+        Route::post('/update/{id}', 'ScheduleController@update')->name('schedule-update');
+        Route::get('/delete/{id}', 'ScheduleController@delete')->name('schedule-delete');
+        Route::post('/destroy/{id}', 'ScheduleController@destroy')->name('schedule-destroy');
+    });
 });

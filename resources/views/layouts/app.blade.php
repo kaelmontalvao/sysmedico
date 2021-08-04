@@ -30,7 +30,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white">
+              <a href="{{ route('schedule-index') }}" class="nav-link text-white">
                 Agendamentos
               </a>
             </li>
