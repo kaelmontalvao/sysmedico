@@ -43,7 +43,6 @@
     @yield('content')
   </main>
 
-{{-- <script src="{{ asset('js/jquery.js') }}"></script> --}}
 <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('js/dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTables-bootstrap4.min.js') }}"></script>

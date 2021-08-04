@@ -5,7 +5,6 @@
         <div class="row">
             <div class="align-btn-home col-md-4">
                 <a class="btn-home" href="{{ route('home') }}" title="Inicio">
-                    {{-- <i class="bi bi-house p-5"></i> --}}
                     <i class="bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
                 </a>
             </div>
@@ -31,10 +30,7 @@
         </div>
     </div>
     <div class="card-body">
-    {{-- <table class="dataTables"> --}}
         <table id="datatable" class="table-responsive-md table table-striped table-bordered">
-        {{-- <table id="example" class="dataTables table table-striped table-bordered" style="width:100%"> --}}
-            {{-- <table id="example" class="display" style="width:100%"> --}}
             <thead>
                 <tr>
                     <th>Nome</th>

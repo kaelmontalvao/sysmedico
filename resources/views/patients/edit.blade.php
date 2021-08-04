@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="align-menu-text col-md-4 py-2">
-                <h3>Alteração cadastro de usuário</h3>
+                <h3>Alterar cadastro de paciente</h3>
             </div>
 
         </div>

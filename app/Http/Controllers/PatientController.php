@@ -67,7 +67,6 @@ class PatientController extends Controller
         $patient = Patient::find($id);
 
         $patient->sexo = ($patient->sexo == 'f' ? 'Feminino' : 'Masculino');
-        // dd($patient);
         switch ($patient->status_civil) {
             case 's':
                 $patient->status_civil = "Solteiro";
@@ -127,7 +126,6 @@ class PatientController extends Controller
             session()->flash('flash_success', "Salvo com sucesso");
             return redirect()->route('patient-index');
         } catch (\Exception $e) {
-            // dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->back()->withInput();
@@ -149,7 +147,6 @@ class PatientController extends Controller
             session()->flash('flash_success', "Paciente deletado com sucesso");
             return redirect()->route('patient-index');
         } catch (\Exception $e) {
-            // dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->back();

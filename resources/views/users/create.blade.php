@@ -5,7 +5,6 @@
         <div class="row">
             <div class="align-btn-home col-md-4">
                 <a class="btn-home" href="{{ route('home') }}" title="Inicio">
-                    {{-- <i class="bi bi-house p-5"></i> --}}
                     <i class="bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
                 </a>
             </div>
@@ -77,5 +76,4 @@
     </div>
 </div>
 </section>
-<script type="text/javascript">console.log('test')</script>
 @endsection

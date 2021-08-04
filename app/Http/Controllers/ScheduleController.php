@@ -45,7 +45,6 @@ class ScheduleController extends Controller
         try {
 
             $data = $request->all();
-            // dd($data);
             Schedule::create($data);
             DB::commit();
             session()->flash('flash_success', "Salvo com sucesso");
@@ -67,7 +66,6 @@ class ScheduleController extends Controller
     public function delete($id)
     {
         $schedule = Schedule::getSchedulesById($id);
-        // dd($schedule);
         return view('schedules.delete', compact('schedule'));
     }
 
@@ -134,7 +132,6 @@ class ScheduleController extends Controller
             session()->flash('flash_success', "Agendamendo excluído com sucesso");
             return redirect()->route('schedule-index');
         } catch (\Exception $e) {
-            // dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->back();

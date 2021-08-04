@@ -19,6 +19,7 @@ class DoctorController extends Controller
         return view('doctors.index', compact('doctors'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -68,7 +69,6 @@ class DoctorController extends Controller
         $doctor= Doctor::find($id);
 
         $doctor->sexo = ($doctor->sexo == 'f' ? 'Feminino' : 'Masculino');
-        // dd(doctor;
         switch ($doctor->status_civil) {
             case 's':
                 $doctor->status_civil = "Solteiro";
@@ -128,7 +128,6 @@ class DoctorController extends Controller
             session()->flash('flash_success', "Salvo com sucesso");
             return redirect()->route('doctor-index');
         } catch (\Exception $e) {
-            // dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->back()->withInput();
@@ -150,7 +149,6 @@ class DoctorController extends Controller
             session()->flash('flash_success', "Médico deletado com sucesso");
             return redirect()->route('doctor-index');
         } catch (\Exception $e) {
-            // dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->back();
