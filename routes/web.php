@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // Auth::logout();
     return view('home');
 });
 
@@ -22,8 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-// Route::get('/', function () { return view('users.index');});
 Route::group(['middleware' => 'auth'], function(){
     Route::group(['prefix' => 'usuarios'], function(){
         Route::get('/', 'UserController@index')->name('user-index');
@@ -65,4 +62,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/delete/{id}', 'ScheduleController@delete')->name('schedule-delete');
         Route::post('/destroy/{id}', 'ScheduleController@destroy')->name('schedule-destroy');
     });
+});
+
+/* Rota para consulta na Api */
+Route::group(['prefix' => '/api/v1', 'namespace' => 'Api'], function(){
+    Route::get('/doctors', 'DoctorController@getDoctors');
 });

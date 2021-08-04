@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="align-menu-text col-md-4 py-2">
-                <h3>Visualizar cadastro de médico</h3>
+                <h3>Visualizar agendamento</h3>
             </div>
 
         </div>
