@@ -5,12 +5,11 @@
         <div class="row">
             <div class="align-btn-home col-md-4">
                 <a class="btn-home" href="{{ route('home') }}" title="Inicio">
-                    {{-- <i class="bi bi-house p-5"></i> --}}
                     <i class="bi-house" style="font-size: 2rem; color: cornflowerblue;"></i>
                 </a>
             </div>
             <div class="align-menu-text col-md-4 py-2">
-                <h3>Novo cadastro de pacientes</h3>
+                <h3>Novo cadastro de médico</h3>
             </div>
 
         </div>
@@ -27,7 +26,7 @@
         </div>
     </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('patient-store') }}">
+        <form method="POST" action="{{ route('doctor-store') }}">
             @csrf
             <div class="form-group row">
                 <div class="col-md-8">
@@ -48,7 +47,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="birth">{{ __('Data nascimento') }}</label>
                     <input id="birth" type="date" class="form-control @error('birth') is-invalid @enderror" name="birth" value="{{ old('birth') }}" required autocomplete="birth">
 
@@ -58,7 +57,7 @@
                         </span>
                     @enderror
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="status_civil">{{ __('Estado civil') }}</label>
                     <select name="status_civil" id="civil_status" class="form-control">
                         <option value="s">Solteiro</option>
@@ -67,13 +66,17 @@
                         <option value="v">Viuvo</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="document">{{ __('RG/CPF') }}</label>
                     <input id="document" type="text" class="form-control" name="document" required>
                 </div>
+                <div class="col-md-3">
+                    <label for="crm">{{ __('CRM') }}</label>
+                    <input id="crm" type="text" class="form-control" name="crm" required>
+                </div>
             </div>
             <div class="form-group row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="email">{{ __('Email') }}</label>
                     <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" required>
 
@@ -83,13 +86,17 @@
                         </span>
                     @enderror
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="phone">{{ __('Telefone') }}</label>
                     <input id="phone" type="text" class="form-control" name="phone">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <label for="cellphone">{{ __('Celular') }}</label>
                     <input id="cellphone" type="text" class="form-control" name="cellphone">
+                </div>
+                <div class="col-md-3">
+                    <label for="specialty">{{ __('Especialidade') }}</label>
+                    <input id="specialty" type="text" class="form-control" name="specialty">
                 </div>
             </div>
             <hr>
@@ -167,5 +174,4 @@
     </div>
 </div>
 </section>
-<script type="text/javascript">console.log('test')</script>
 @endsection

@@ -167,5 +167,4 @@
     </div>
 </div>
 </section>
-<script type="text/javascript">console.log('test')</script>
 @endsection

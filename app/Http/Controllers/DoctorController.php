@@ -50,6 +50,7 @@ class DoctorController extends Controller
             session()->flash('flash_success', "Salvo com sucesso");
             return redirect()->route('doctor-index');
         } catch (\Exception $e) {
+            dd($e);
             DB::rollback();
             session()->flash('flash_error', 'Falha ao salvar');
             return redirect()->route('doctor-create')->withInput();
@@ -146,7 +147,7 @@ class DoctorController extends Controller
         try {
             Doctor::find($id)->delete();
             DB::commit();
-            session()->flash('flash_success', "Paciente deletado com sucesso");
+            session()->flash('flash_success', "Médico deletado com sucesso");
             return redirect()->route('doctor-index');
         } catch (\Exception $e) {
             // dd($e);

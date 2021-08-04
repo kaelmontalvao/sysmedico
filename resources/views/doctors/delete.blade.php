@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="align-menu-text col-md-4 py-2">
-                <h3>Deletar paciente</h3>
+                <h3>Deletar médico</h3>
             </div>
 
         </div>
@@ -26,28 +26,29 @@
         </div>
     </div>
     <div class="card-body">
-        <form method="POST" action="{{ route('patient-destroy', $patient->id) }}">
+        <form method="POST" action="{{ route('doctor-destroy', $doctor->id) }}">
             @csrf
             <legend>
-                Dados do paciente que será excluído!
+                Dados do médico que será excluído!
             </legend>
             <br><hr>
             <div class="form-group row">
                 <ul>
-                    <li>{{ $patient->name }}</li>
-                    <li>{{ $patient->birth }}</li>
-                    <li>{{ $patient->sexo }}</li>
-                    <li>{{ $patient->status_civil }}</li>
-                    <li>{{ $patient->document }}</li>
-                    <li>{{ $patient->email }}</li>
-                    <li>{{ $patient->phone }}</li>
-                    <li>{{ $patient->cellphone }}</li>
-                    <li>{{ $patient->street }}</li>
-                    <li>{{ $patient->cep }}</li>
-                    <li>{{ $patient->number }}</li>
-                    <li>{{ $patient->district }}</li>
-                    <li>{{ $patient->state }}</li>
-                    <li>{{ $patient->city }}</li>
+                    <li>{{ $doctor->name }}</li>
+                    <li>{{ $doctor->specialty }}</li>
+                    <li>{{ $doctor->birth }}</li>
+                    <li>{{ $doctor->sexo }}</li>
+                    <li>{{ $doctor->status_civil }}</li>
+                    <li>{{ $doctor->document }}</li>
+                    <li>{{ $doctor->email }}</li>
+                    <li>{{ $doctor->phone }}</li>
+                    <li>{{ $doctor->cellphone }}</li>
+                    <li>{{ $doctor->street }}</li>
+                    <li>{{ $doctor->cep }}</li>
+                    <li>{{ $doctor->number }}</li>
+                    <li>{{ $doctor->district }}</li>
+                    <li>{{ $doctor->state }}</li>
+                    <li>{{ $doctor->city }}</li>
                 </ul>
             </div>
             <div class="row">
@@ -61,5 +62,4 @@
     </div>
 </div>
 </section>
-<script type="text/javascript">console.log('test')</script>
 @endsection

@@ -119,33 +119,33 @@
                 <div class="col-md-3">
                     <label for="state">{{ __('Estado') }}</label>
                     <select class="form-control" id="state" type="text" name="state">
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
+                        <option value="AC" {{ $patient->state == 'AC' ? 'selected' : '' }}>Acre</option>
+                        <option value="AL" {{ $patient->state == 'AL' ? 'selected' : '' }}>Alagoas</option>
+                        <option value="AP" {{ $patient->state == 'AP' ? 'selected' : '' }}>Amapá</option>
+                        <option value="AM" {{ $patient->state == 'AM' ? 'selected' : '' }}>Amazonas</option>
+                        <option value="BA" {{ $patient->state == 'BA' ? 'selected' : '' }}>Bahia</option>
+                        <option value="CE" {{ $patient->state == 'CE' ? 'selected' : '' }}>Ceará</option>
+                        <option value="DF" {{ $patient->state == 'DF' ? 'selected' : '' }}>Distrito Federal</option>
+                        <option value="ES" {{ $patient->state == 'ES' ? 'selected' : '' }}>Espírito Santo</option>
+                        <option value="GO" {{ $patient->state == 'GO' ? 'selected' : '' }}>Goiás</option>
+                        <option value="MA" {{ $patient->state == 'MA' ? 'selected' : '' }}>Maranhão</option>
+                        <option value="MT" {{ $patient->state == 'MT' ? 'selected' : '' }}>Mato Grosso</option>
+                        <option value="MS" {{ $patient->state == 'MS' ? 'selected' : '' }}>Mato Grosso do Sul</option>
+                        <option value="MG" {{ $patient->state == 'MG' ? 'selected' : '' }}>Minas Gerais</option>
+                        <option value="PA" {{ $patient->state == 'PA' ? 'selected' : '' }}>Pará</option>
+                        <option value="PB" {{ $patient->state == 'PB' ? 'selected' : '' }}>Paraíba</option>
+                        <option value="PR" {{ $patient->state == 'PR' ? 'selected' : '' }}>Paraná</option>
+                        <option value="PE" {{ $patient->state == 'PE' ? 'selected' : '' }}>Pernambuco</option>
+                        <option value="PI" {{ $patient->state == 'PI' ? 'selected' : '' }}>Piauí</option>
+                        <option value="RJ" {{ $patient->state == 'RJ' ? 'selected' : '' }}>Rio de Janeiro</option>
+                        <option value="RN" {{ $patient->state == 'RN' ? 'selected' : '' }}>Rio Grande do Norte</option>
+                        <option value="RS" {{ $patient->state == 'RS' ? 'selected' : '' }}>Rio Grande do Sul</option>
+                        <option value="RO" {{ $patient->state == 'RO' ? 'selected' : '' }}>Rondônia</option>
+                        <option value="RR" {{ $patient->state == 'RR' ? 'selected' : '' }}>Roraima</option>
+                        <option value="SC" {{ $patient->state == 'SC' ? 'selected' : '' }}>Santa Catarina</option>
+                        <option value="SP" {{ $patient->state == 'SP' ? 'selected' : '' }}>São Paulo</option>
+                        <option value="SE" {{ $patient->state == 'SE' ? 'selected' : '' }}>Sergipe</option>
+                        <option value="TO" {{ $patient->state == 'TO' ? 'selected' : '' }}>Tocantins</option>
                     </select>
                 </div>
                 <div class="col-md-3">
