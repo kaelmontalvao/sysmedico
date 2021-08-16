@@ -50,7 +50,6 @@
                                 </div>
                             </div>
                             <div class="col-md-3 offset-md-1 px-3">
-                            {{-- <div class="col-md-3 float-md-right"> --}}
                                 <button type="submit" class="btn btn-success">
                                     {{ __('Acessar') }}
                                 </button>
@@ -59,9 +58,6 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4 px-0">
-
-                            {{-- </div> --}}
-                            {{-- <div class="col-md-3"> --}}
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Esqueceu sua senha?') }}
