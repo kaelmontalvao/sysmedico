@@ -57,7 +57,7 @@
 </script>
 <footer class="text-center bg-info footer">
     <section class="d-flex justify-content-center p-4">
-    <p>Teste Full Stack – Mazzatech</p>
+    <p>Sistema teste - agendamento de pacientes</p>
     </section>
 </footer>
 </body>

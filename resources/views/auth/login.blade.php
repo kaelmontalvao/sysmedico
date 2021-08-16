@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Senha') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('Senha') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-3 offset-md-4 d-flex align-items-center">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -49,19 +49,31 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-3 offset-md-1 px-3">
+                            {{-- <div class="col-md-3 float-md-right"> --}}
                                 <button type="submit" class="btn btn-success">
                                     {{ __('Acessar') }}
                                 </button>
+                            </div>
+                        </div>
 
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4 px-0">
+
+                            {{-- </div> --}}
+                            {{-- <div class="col-md-3"> --}}
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Esqueceu sua senha?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4 px-0">
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('Novo usuário ? Cadastre-se') }}
+                                </a>
                             </div>
                         </div>
                     </form>
