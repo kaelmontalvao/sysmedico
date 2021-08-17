@@ -49,7 +49,7 @@
         <div class="form-group row">
             <div class="col-md-6">
                 <label for="date">{{ __('Data') }}</label>
-                <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date', $schedule->date) }}" readonly autocomplete="date">
+                <input id="date" type="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date', $schedule->date) }}" readonly>
                 @error('date')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-6">
                 <label for="hours">{{ __('Horário') }}</label>
-                <input id="hours" type="time" class="form-control @error('hours') is-invalid @enderror" name="hours" value="{{ old('hours', $schedule->hours) }}" readonly autocomplete="hours">
+                <input id="hours" type="time" class="form-control @error('hours') is-invalid @enderror" name="hours" value="{{ old('hours', $schedule->hours) }}" readonly>
 
                 @error('hours')
                     <span class="invalid-feedback" role="alert">

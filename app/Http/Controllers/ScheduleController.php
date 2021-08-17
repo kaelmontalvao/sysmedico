@@ -78,6 +78,8 @@ class ScheduleController extends Controller
     public function edit($id)
     {
         $schedule = Schedule::find($id);
+        $schedule->date = date('Y-m-d', strtotime($schedule->date));
+
         $patients = Patient::all();
         $doctors = Doctor::all();
         return view('schedules.edit', compact('schedule', 'patients', 'doctors'));
@@ -86,6 +88,8 @@ class ScheduleController extends Controller
     public function read($id)
     {
         $schedule = Schedule::find($id);
+        $schedule->date = date('Y-m-d', strtotime($schedule->date));
+
         $patients = Patient::all();
         $doctors = Doctor::all();
         return view('schedules.read', compact('schedule', 'patients', 'doctors'));
