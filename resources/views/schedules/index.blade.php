@@ -54,10 +54,10 @@
                             <a href="{{ route('schedule-read', $schedule->id) }}" class="mr-2">
                                 <i class="bi bi-card-list" data-toggle="tooltip" title="Visualizar cadastro"></i>
                             </a>
-                            <a href="{{ route('schedule-edit', $schedule->id) }}" class="mr-2">
+                            <a href="{{ route('schedule-edit', $schedule->id) }}" class="mr-1">
                                 <i class="bi bi-pencil-square" data-toggle="tooltip" title="Editar"></i>
                             </a>
-                            <a href="{{ route('schedule-delete', $schedule->id) }}">
+                            <a href="{{ route('schedule-delete', $schedule->id) }}" class="mr-1">
                                 <i class="bi bi-trash" data-toggle="tooltip" title="Excluir"></i>
                             </a>
                         </td>

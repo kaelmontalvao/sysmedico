@@ -55,10 +55,10 @@
                             <a href="{{ route('doctor-read', $doctor->id) }}" class="mr-2">
                                 <i class="bi bi-card-list" data-toggle="tooltip" title="Visualizar cadastro"></i>
                             </a>
-                            <a href="{{ route('doctor-edit', $doctor->id) }}" class="mr-2">
+                            <a href="{{ route('doctor-edit', $doctor->id) }}" class="mr-1">
                                 <i class="bi bi-pencil-square" data-toggle="tooltip" title="Editar"></i>
                             </a>
-                            <a href="{{ route('doctor-delete', $doctor->id) }}">
+                            <a href="{{ route('doctor-delete', $doctor->id) }}" class="mr-1">
                                 <i class="bi bi-trash" data-toggle="tooltip" title="Excluir"></i>
                             </a>
                         </td>

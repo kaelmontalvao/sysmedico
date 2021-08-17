@@ -47,10 +47,10 @@
                             <a href="{{ route('user-read', $user->id) }}" class="mr-2">
                                 <i class="bi bi-card-list" data-toggle="tooltip" title="Visualizar cadastro"></i>
                             </a>
-                            <a href="{{ route('user-edit', $user->id) }}" class="mr-2">
+                            <a href="{{ route('user-edit', $user->id) }}" class="mr-1">
                                 <i class="bi bi-pencil-square" data-toggle="tooltip" title="Editar"></i>
                             </a>
-                            <a href="{{ route('user-delete', $user->id) }}">
+                            <a href="{{ route('user-delete', $user->id) }}" class="mr-1">
                                 <i class="bi bi-trash" data-toggle="tooltip" title="Excluir"></i>
                             </a>
                         </td>

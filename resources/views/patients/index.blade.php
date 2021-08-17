@@ -53,10 +53,10 @@
                             <a href="{{ route('patient-read', $patient->id) }}" class="mr-2">
                                 <i class="bi bi-card-list" data-toggle="tooltip" title="Visualizar cadastro"></i>
                             </a>
-                            <a href="{{ route('patient-edit', $patient->id) }}" class="mr-2">
+                            <a href="{{ route('patient-edit', $patient->id) }}" class="mr-1">
                                 <i class="bi bi-pencil-square" data-toggle="tooltip" title="Editar"></i>
                             </a>
-                            <a href="{{ route('patient-delete', $patient->id) }}">
+                            <a href="{{ route('patient-delete', $patient->id) }}" class="mr-1">
                                 <i class="bi bi-trash" data-toggle="tooltip" title="Excluir"></i>
                             </a>
                         </td>
