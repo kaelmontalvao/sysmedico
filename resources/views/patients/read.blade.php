@@ -80,11 +80,11 @@
             </div>
             <div class="col-md-4">
                 <label for="phone">{{ __('Telefone') }}</label>
-                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone', $patient->phone) }}" readonly>
+                <input id="phone" type="text" class="form-control" name="phone"  attrname="telephone1" value="{{ old('phone', $patient->phone) }}" readonly>
             </div>
             <div class="col-md-4">
                 <label for="cellphone">{{ __('Celular') }}</label>
-                <input id="cellphone" type="text" class="form-control" name="cellphone" value="{{ old('cellphone', $patient->cellphone) }}" readonly>
+                <input id="cellphone" type="text" class="form-control" name="cellphone"  attrname="telephone2" value="{{ old('cellphone', $patient->cellphone) }}" readonly>
             </div>
         </div>
         <hr>
@@ -158,5 +158,36 @@
         </div>
     </div>
 </div>
-</section>
+@push('scripts-js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
+<script type="text/javascript">
+    console.log('xxxx222');
+    function inputHandler(masks, max, event) {
+      var c = event.target;
+      var v = c.value.replace(/\D/g, '');
+      var m = c.value.length > max ? 1 : 0;
+      VMasker(c).unMask();
+      VMasker(c).maskPattern(masks[m]);
+      c.value = VMasker.toPattern(v, masks[m]);
+    }
+
+    var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
+    var tel = document.querySelector('input[attrname=telephone1]');
+    VMasker(tel).maskPattern(telMask[0]);
+    tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+
+    var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
+    var tel2 = document.querySelector('input[attrname=telephone2]');
+    VMasker(tel2).maskPattern(telMask[0]);
+    tel2.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+
+    $("#document").keyup(function() {
+        if ($("#document").val().length < 11 || $("#document").val().length == 13) {
+            VMasker(document.querySelector("#document")).unMask();
+        }else{
+            VMasker(document.querySelector("#document")).maskPattern("999.999.999-99");
+        }
+    });
+</script>
+@endpush
 @endsection

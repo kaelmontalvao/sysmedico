@@ -55,6 +55,9 @@
     }, 5000 );
 } );
 </script>
+@stack('components-js')
+@stack('scripts-js')
+
 <footer class="text-center bg-info footer">
     <section class="d-flex justify-content-center p-4">
     <p>Sistema teste - agendamento de pacientes</p>
